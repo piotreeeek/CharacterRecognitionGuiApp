@@ -23,5 +23,11 @@ namespace CharacterRecognitionApp
         {
             InitializeComponent();
         }
+
+        private void ButtonClearDraw_Click(object sender, RoutedEventArgs e)
+        {
+            DrawCanvas.Strokes.Clear();
+            TextBlockDraw.Text = null;
+        }
     }
 }
