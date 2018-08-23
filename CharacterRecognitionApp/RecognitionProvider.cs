@@ -39,8 +39,8 @@ namespace CharacterRecognitionApp
             string response = (String)res[0];
             if (response.Length > 1)
             {
-                MessageBoxResult messageBlankImage = MessageBox.Show("Select image blank. Try another.",
-                                     "Blank image",
+                MessageBoxResult messageBlankImage = MessageBox.Show("Wybrany obraz jest pusty. Spróbuj wybrać inny.",
+                                     "Pusty obraz",
                                      MessageBoxButton.OK);
             }
             else

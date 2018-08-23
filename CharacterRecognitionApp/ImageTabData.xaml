@@ -16,20 +16,20 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <StackPanel>
-            <Label Content="Loaded image" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
+            <Label Content="Załadowany obraz" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
             <Image Name="ImageContener" Width="400" Height="300" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Image>
         </StackPanel>
         <StackPanel Grid.Column="1">
-            <Label Content="Recognited letter" HorizontalAlignment="Center"></Label>
+            <Label Content="Rozpoznana litera" HorizontalAlignment="Center"></Label>
             <TextBlock Name="TextBlockImage" HorizontalAlignment="Center" FontSize="50"></TextBlock>
         </StackPanel>
 
         <DockPanel Grid.Row="1">
-            <Button Content="Load file" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonLoadImage_Click"></Button>
-            <Button Content="Clear" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonClearImage_Click"></Button>
+            <Button Content="Wybierz plik" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonLoadImage_Click"></Button>
+            <Button Content="Wyczyść" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonClearImage_Click"></Button>
         </DockPanel>
         <DockPanel Grid.Row="1" Grid.Column="1">
-            <Button Content="Recognite" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonRecogniteImage_Click"></Button>
+            <Button Content="Rozpoznaj" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonRecogniteImage_Click"></Button>
         </DockPanel>
     </Grid>
 </UserControl>

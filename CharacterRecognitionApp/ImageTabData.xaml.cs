@@ -53,8 +53,8 @@ PNG|*.PNG; *.png|JPEG|*.JPG; *.JPEG *.jpg; *.jpeg|Bitmap|*.BMP; *.bmp|GIF|*.GIF;
         {
             if (ImageContener.Source == null)
             {
-                MessageBoxResult messageEmptyImage = MessageBox.Show("No image selected. You must select image.",
-                                          "No image",
+                MessageBoxResult messageEmptyImage = MessageBox.Show("Brak obrazu. Musisz wybrać obraz.",
+                                          "Brak obrazu",
                                           MessageBoxButton.OK);
             }
             else

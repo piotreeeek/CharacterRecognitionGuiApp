@@ -31,8 +31,8 @@ namespace CharacterRecognitionApp
         {
             if (DrawCanvas.Strokes.Count < 1)
             {
-                MessageBoxResult messageEmptyDraw = MessageBox.Show("Draw empty. You must draw something.",
-                                          "Empty draw",
+                MessageBoxResult messageEmptyDraw = MessageBox.Show("Pusty rysunek. Musisz coś narysować.",
+                                          "Pusty rysunek",
                                           MessageBoxButton.OK);
             }
             else

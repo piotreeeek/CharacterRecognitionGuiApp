@@ -16,7 +16,7 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <StackPanel>
-            <Label Content="Draw Letter" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
+            <Label Content="Narysuj literę" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
             <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center">
                 <InkCanvas Name="DrawCanvas" Width="400" Height="300" VerticalAlignment="Bottom" HorizontalAlignment="Center">
                     <InkCanvas.DefaultDrawingAttributes>
@@ -26,15 +26,15 @@
             </Grid>
         </StackPanel>
         <StackPanel Grid.Column="1">
-            <Label Content="Recognited letter" HorizontalAlignment="Center"></Label>
+            <Label Content="Rozpoznana litera" HorizontalAlignment="Center"></Label>
             <TextBlock Name="TextBlockDraw" HorizontalAlignment="Center" FontSize="50"></TextBlock>
         </StackPanel>
 
         <DockPanel Grid.Row="1">
-            <Button Content="Clear" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonClearDraw_Click"></Button>
+            <Button Content="Wyczyść" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonClearDraw_Click"></Button>
         </DockPanel>
         <DockPanel Grid.Row="1" Grid.Column="1">
-            <Button Content="Recognite" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonRecogniteDraw_Click"></Button>
+            <Button Content="Rozpoznaj" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonRecogniteDraw_Click"></Button>
         </DockPanel>
 
 

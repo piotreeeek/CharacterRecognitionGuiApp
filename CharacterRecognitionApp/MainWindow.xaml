@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CharacterRecognitionApp"
         mc:Ignorable="d"
-        Title="Character Recognition" Height="500" Width="650">
+        Title="Rozpoznaj literę" Height="500" Width="650">
     <Grid Background="Beige">
         <TabControl>
-            <TabItem Header="From draw">
+            <TabItem Header="Z rysunku">
                 <local:DrawTabData></local:DrawTabData>
             </TabItem>
-            <TabItem Header="From file" >
+            <TabItem Header="Z pliku" >
                 <local:ImageTabData></local:ImageTabData>
             </TabItem>
         </TabControl>
