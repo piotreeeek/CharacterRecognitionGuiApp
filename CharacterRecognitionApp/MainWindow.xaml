@@ -9,69 +9,10 @@
     <Grid Background="Beige">
         <TabControl>
             <TabItem Header="From draw">
-                <Grid Background="AliceBlue">
-                    <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*" />
-                    <ColumnDefinition Width="1*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="3*" />
-                        <RowDefinition Height="1*" />
-                    </Grid.RowDefinitions>
-                    <StackPanel>
-                        <Label Content="Draw Letter" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
-                        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                            <InkCanvas Name="DrawCanvas" Width="400" Height="300" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                                <InkCanvas.DefaultDrawingAttributes>
-                                    <DrawingAttributes Color="Black" Width="7" Height="7" />
-                                </InkCanvas.DefaultDrawingAttributes>
-                            </InkCanvas>
-                        </Grid>
-                    </StackPanel>
-                    <StackPanel Grid.Column="1">
-                        <Label Content="Recognited letter" HorizontalAlignment="Center"></Label>
-                        <TextBlock Name="TextBlockDraw" HorizontalAlignment="Center" FontSize="50"></TextBlock>
-                    </StackPanel>
-
-                    <DockPanel Grid.Row="1">
-                        <Button Content="Clear" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonClearDraw_Click"></Button>
-                    </DockPanel>
-                    <DockPanel Grid.Row="1" Grid.Column="1">
-                        <Button Content="Recognite" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonRecogniteDraw_Click"></Button>
-                    </DockPanel>
-                    
-                    
-                </Grid>
+                <local:DrawTabData></local:DrawTabData>
             </TabItem>
             <TabItem Header="From file" >
-                <Grid Background="AliceBlue">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*" />
-                        <ColumnDefinition Width="1*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="3*" />
-                        <RowDefinition Height="1*" />
-                    </Grid.RowDefinitions>
-                    <StackPanel>
-                        <Label Content="Loaded image" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
-                        <Image Name="ImageContener" Width="400" Height="300" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Image>
-                    </StackPanel>
-                    <StackPanel Grid.Column="1">
-                        <Label Content="Recognited letter" HorizontalAlignment="Center"></Label>
-                        <TextBlock Name="TextBlockImage" HorizontalAlignment="Center" FontSize="50"></TextBlock>
-                    </StackPanel>
-
-                    <DockPanel Grid.Row="1">
-                        <Button Content="Load file" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonLoadImage_Click"></Button>
-                        <Button Content="Clear" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonClearImage_Click"></Button>
-                    </DockPanel>
-                    <DockPanel Grid.Row="1" Grid.Column="1">
-                        <Button Content="Recognite" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonRecogniteImage_Click"></Button>
-                    </DockPanel>
-
-
-                </Grid>
+                <local:ImageTabData></local:ImageTabData>
             </TabItem>
         </TabControl>
     </Grid>

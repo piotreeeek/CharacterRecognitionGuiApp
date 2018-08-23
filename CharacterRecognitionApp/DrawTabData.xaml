@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="CharacterRecognitionApp.DrawTabData"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CharacterRecognitionApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Label Content="Draw Letter" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
+            <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <InkCanvas Name="DrawCanvas" Width="400" Height="300" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    <InkCanvas.DefaultDrawingAttributes>
+                        <DrawingAttributes Color="Black" Width="7" Height="7" />
+                    </InkCanvas.DefaultDrawingAttributes>
+                </InkCanvas>
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Label Content="Recognited letter" HorizontalAlignment="Center"></Label>
+            <TextBlock Name="TextBlockDraw" HorizontalAlignment="Center" FontSize="50"></TextBlock>
+        </StackPanel>
+
+        <DockPanel Grid.Row="1">
+            <Button Content="Clear" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonClearDraw_Click"></Button>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="1">
+            <Button Content="Recognite" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonRecogniteDraw_Click"></Button>
+        </DockPanel>
+
+
+    </Grid>
+</UserControl>
