@@ -14,6 +14,9 @@
             <TabItem Header="From file" >
                 <local:ImageTabData></local:ImageTabData>
             </TabItem>
+            <TabItem Header="Settings" >
+                <local:SettingsTabData></local:SettingsTabData>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
