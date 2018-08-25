@@ -32,15 +32,21 @@ namespace CharacterRecognitionApp
             object result = null;
 
             // Call the MATLAB function myfunc
-            _matlab.Feval("getLetterForApp", 1, out result, fileName);
+            _matlab.Feval("getLetterForApp", 2, out result, fileName);
 
             // Display result 
             object[] res = result as object[];
-            string response = (String)res[0];
-            if (response.Length > 1)
+            string response_letter = (String)res[0];
+            int response_error = (int)(double)res[1];
+            if (response_error == 1)
             {
                 MessageBoxResult messageBlankImage = MessageBox.Show("Wybrany obraz jest pusty. Spróbuj wybrać inny.",
                                      "Pusty obraz",
+                                     MessageBoxButton.OK);
+            }else if(response_error != 0)
+            {
+                MessageBoxResult messageBlankImage = MessageBox.Show("Bład rozpoznawania litery.",
+                                     "Bład",
                                      MessageBoxButton.OK);
             }
             else
