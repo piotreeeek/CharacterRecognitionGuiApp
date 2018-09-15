@@ -15,7 +15,7 @@ namespace CharacterRecognitionApp
 
             // Change to the directory where the function is located 
             // TODO: move script to place inside project
-            _matlab.Execute(@"cd d:\politechnika\semestr_8\inzynierka\siec\final");
+            _matlab.Execute(@"cd " + AppDomain.CurrentDomain.BaseDirectory + "ReconScript/");
         }
                
         public static RecognitionProvider Instance
