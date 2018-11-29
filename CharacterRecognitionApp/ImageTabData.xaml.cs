@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -36,9 +37,8 @@ PNG|*.PNG; *.png|JPEG|*.JPG; *.JPEG *.jpg; *.jpeg|Bitmap|*.BMP; *.bmp|GIF|*.GIF;
                 // Open document 
                 _fileNameImage = openFileDialog.FileName;
                 Trace.WriteLine(_fileNameImage);
-
-                ImageSource imageSource = new BitmapImage(new Uri(_fileNameImage));
-                ImageContener.Source = imageSource;
+                
+                ImageContener.Source = this.Image();
 
             }
         }
@@ -65,6 +65,18 @@ PNG|*.PNG; *.png|JPEG|*.JPG; *.JPEG *.jpg; *.jpeg|Bitmap|*.BMP; *.bmp|GIF|*.GIF;
 
             }
 
+        }
+        private ImageSource Image()
+        {
+            BitmapImage bitmapImage = new BitmapImage();
+            FileStream fileStream = new FileStream(_fileNameImage, FileMode.Open, FileAccess.Read);
+            bitmapImage.BeginInit();
+            bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+            bitmapImage.StreamSource = fileStream;
+            bitmapImage.EndInit();
+            fileStream.Dispose();
+
+            return bitmapImage;
         }
     }
 }
