@@ -15,6 +15,7 @@ namespace CharacterRecognitionApp
     public partial class ImageTabData : UserControl
     {
         private String _fileNameImage;
+        private FileStream _fileStream;
 
         public ImageTabData()
         {
@@ -44,6 +45,11 @@ PNG|*.PNG; *.png|JPEG|*.JPG; *.JPEG *.jpg; *.jpeg|Bitmap|*.BMP; *.bmp|GIF|*.GIF;
         }
         private void ButtonClearImage_Click(object sender, RoutedEventArgs e)
         {
+            if (_fileStream != null)
+            {
+                _fileStream.Dispose();
+                _fileStream = null;
+            }
             _fileNameImage = null;
             TextBlockImage.Text = null;
             ImageContener.Source = null;
@@ -68,13 +74,17 @@ PNG|*.PNG; *.png|JPEG|*.JPG; *.JPEG *.jpg; *.jpeg|Bitmap|*.BMP; *.bmp|GIF|*.GIF;
         }
         private ImageSource Image()
         {
+            if (_fileStream != null)
+            {
+                _fileStream.Dispose();
+                _fileStream = null;
+            }
             BitmapImage bitmapImage = new BitmapImage();
-            FileStream fileStream = new FileStream(_fileNameImage, FileMode.Open, FileAccess.Read);
+            _fileStream = new FileStream(_fileNameImage, FileMode.Open, FileAccess.Read);
             bitmapImage.BeginInit();
             bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-            bitmapImage.StreamSource = fileStream;
+            bitmapImage.StreamSource = _fileStream;
             bitmapImage.EndInit();
-            fileStream.Dispose();
 
             return bitmapImage;
         }
