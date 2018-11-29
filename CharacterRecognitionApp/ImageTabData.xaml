@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
         <StackPanel>
             <Label Content="Załadowany obraz" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
-            <Image Name="ImageContener" Width="400" Height="300" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Image>
+            <Image Name="ImageContainer" Width="400" Height="300" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Image>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <Label Content="Rozpoznana litera" HorizontalAlignment="Center"></Label>
@@ -26,7 +26,7 @@
 
         <DockPanel Grid.Row="1">
             <Button Content="Wybierz plik" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonLoadImage_Click"></Button>
-            <Button Content="Wyczyść" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonClearImage_Click"></Button>
+            <Button Name="ClearButton" Content="Wyczyść" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonClearImage_Click"></Button>
         </DockPanel>
         <DockPanel Grid.Row="1" Grid.Column="1">
             <Button Content="Rozpoznaj" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonRecogniteImage_Click"></Button>

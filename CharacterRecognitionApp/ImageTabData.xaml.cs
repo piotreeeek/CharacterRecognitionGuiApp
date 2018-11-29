@@ -28,18 +28,16 @@ namespace CharacterRecognitionApp
 
             openFileDialog.Filter = @"All Image Files| *.BMP; *.bmp; *.JPG; *.JPEG *.jpg; *.jpeg; *.PNG; *.png; *.GIF; *.gif; *.tif; *.tiff; *.ico; *.ICO|
 PNG|*.PNG; *.png|JPEG|*.JPG; *.JPEG *.jpg; *.jpeg|Bitmap|*.BMP; *.bmp|GIF|*.GIF; *.gif|TIF| *.tif; *.tiff|ICO|*.ico; *.ICO";
-
-
-            // Display OpenFileDialog by calling ShowDialog method 
+ 
             Nullable<bool> result = openFileDialog.ShowDialog();
 
             if (result == true)
             {
-                // Open document 
+                ClearButton.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
                 _fileNameImage = openFileDialog.FileName;
                 Trace.WriteLine(_fileNameImage);
                 
-                ImageContener.Source = this.Image();
+                ImageContainer.Source = this.Image();
 
             }
         }
@@ -52,12 +50,12 @@ PNG|*.PNG; *.png|JPEG|*.JPG; *.JPEG *.jpg; *.jpeg|Bitmap|*.BMP; *.bmp|GIF|*.GIF;
             }
             _fileNameImage = null;
             TextBlockImage.Text = null;
-            ImageContener.Source = null;
+            ImageContainer.Source = null;
         }
 
         private void ButtonRecogniteImage_Click(object sender, RoutedEventArgs e)
         {
-            if (ImageContener.Source == null)
+            if (ImageContainer.Source == null)
             {
                 MessageBoxResult messageEmptyImage = MessageBox.Show("Brak obrazu. Musisz wybrać obraz.",
                                           "Brak obrazu",
@@ -74,11 +72,6 @@ PNG|*.PNG; *.png|JPEG|*.JPG; *.JPEG *.jpg; *.jpeg|Bitmap|*.BMP; *.bmp|GIF|*.GIF;
         }
         private ImageSource Image()
         {
-            if (_fileStream != null)
-            {
-                _fileStream.Dispose();
-                _fileStream = null;
-            }
             BitmapImage bitmapImage = new BitmapImage();
             _fileStream = new FileStream(_fileNameImage, FileMode.Open, FileAccess.Read);
             bitmapImage.BeginInit();
