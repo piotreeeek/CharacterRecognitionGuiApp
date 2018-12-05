@@ -1,6 +1,5 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -35,7 +34,6 @@ PNG|*.PNG; *.png|JPEG|*.JPG; *.JPEG *.jpg; *.jpeg|Bitmap|*.BMP; *.bmp|GIF|*.GIF;
             {
                 ClearButton.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
                 _fileNameImage = openFileDialog.FileName;
-                Trace.WriteLine(_fileNameImage);
                 
                 ImageContainer.Source = this.Image();
 
@@ -63,10 +61,7 @@ PNG|*.PNG; *.png|JPEG|*.JPG; *.JPEG *.jpg; *.jpeg|Bitmap|*.BMP; *.bmp|GIF|*.GIF;
             }
             else
             {
-                Trace.WriteLine(_fileNameImage);
                 RecognitionProvider.Instance.RecogniteLetter(_fileNameImage, TextBlockImage);
-
-
             }
 
         }
